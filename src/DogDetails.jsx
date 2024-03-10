@@ -1,10 +1,15 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
+import { useEffect } from 'react'
 
 const DogDetails = ({ dogs }) => {
 
     const { name } = useParams();
     const dog = dogs.filter((dog) => dog.name.toLowerCase() === name.toLowerCase())[0];
+
+    if (dog === undefined) {
+        return <Navigate to="/dogs" />
+    }
 
     return (
         <>
