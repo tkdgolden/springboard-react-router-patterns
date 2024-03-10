@@ -4,7 +4,7 @@ const Dog = ({ dog }) => {
     return (
         <>
             <h3>{ dog.name }</h3>
-            <img src={ dog.src }></img>
+            <img src={ dog.src } style={ {width:200} }></img>
             <button>
                 Meet <Link to={`/${dog.name}`}>
                     {dog.name}
